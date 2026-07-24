@@ -1,0 +1,23 @@
+# Internal / build / dev files - never publish
+node_modules/
+src/
+components/
+lib/
+.git/
+.claude/
+dist_assets/
+deploy/
+
+# Original/source images - not needed on the server
+assets/*.png
+assets/*.jpg
+assets/*.jpeg
+
+# Scratch base64 dumps used only during manual deploys
+*.b64
+*.b64.txt
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log

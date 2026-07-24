@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/cp -f index.html "$DEPLOYPATH"
+    - /bin/bash -c 'shopt -s nullglob; for f in *.css; do /bin/cp -f "$f" "$DEPLOYPATH"; done'
+    - /bin/bash -c 'shopt -s nullglob; for f in *.js; do /bin/cp -f "$f" "$DEPLOYPATH"; done'
+    - /bin/mkdir -p "$DEPLOYPATH"assets
+    - /bin/cp -rf assets/. "$DEPLOYPATH"assets/
+    - /bin/bash -c '[ -f .htaccess ] && /bin/cp -f .htaccess "$DEPLOYPATH" || true'
